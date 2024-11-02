@@ -1,0 +1,74 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <38 39>;
+            bindings = <&kp B>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer0 {
+            bindings = <
+                &kp Q        &kp W        &kp E        &kp R        &kp T                     &kp Y        &kp U        &kp I       &kp O       &kp P
+                &mt LGUI A   &mt LALT S   &mt LSHFT D  &mt LCTRL F  &kp G                     &kp H        &mt LCTRL J  &mt LSHFT K &mt LALT L  &mt LGUI SEMI
+                &kp Z        &kp X        &kp C        &kp V        &kp B                     &kp N        &kp M        &kp COMMA   &kp DOT     &kp SLASH
+                                          &lt 1 ESC    &kp SPACE    &lt 2 TAB                 &lt 3 ENTER  &kp BSPC     &lt 4 DEL
+            >;
+        };
+
+        num_w_layer1 {
+            bindings1 = <
+                &trans       &trans       &trans       &trans       &trans                    &trans       &kp N7       &kp N8      &kp N9      &kp KP_NUM
+                &trans       &trans       &trans       &trans       &trans                    &kp KP_DOT   &kp N4       &kp N5      &kp N6      &kp CAPS
+                &trans       &trans       &trans       &trans       &trans                    &kp N0       &kp N1       &kp N2      &kp N3      &kp SLASH
+                                          &trans       &kp SPACE    &kp TAB                   &kp ENTER    &kp BSPC     &kp DEL
+            >;
+        };
+
+        nav_w_layer2 {
+            bindings = <
+                &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR                &kp PG_UP    &kp HOME     &kp UP      &kp END     &trans
+                &trans       &trans       &trans       &trans       &trans                    &kp PG_DN    &kp LEFT     &kp DOWN    &kp RIGHT   &trans
+                &sys_reset   &bootloader  &trans       &trans       &trans                    &kp LANG1    &trans       &trans      &trans      &trans
+                                          &kp ESC      &kp SPACE    &trans                    &kp ENTER    &kp BSPC     &kp DEL
+            >;
+        };
+
+        spec_w_layer3 {
+            bindings = <
+                &kp LT       &kp BSLH     &kp AMPS     &kp GT       &kp SQT                   &trans       &trans       &trans      &trans      &trans
+                &kp LPAR     &kp KP_EQUAL &kp EXCL     &kp RPAR     &kp SEMI                  &trans       &trans       &trans      &trans      &trans
+                &kp LBKT     &kp MINUS    &kp PLUS     &kp RBKT     &kp GRAVE                 &trans       &trans       &trans      &trans      &trans
+                                          &kp ESC      &kp SPACE    &kp TAB                   &trans       &kp BSPC     &kp DEL
+            >;
+        };
+
+        func_w_layer4 {
+            bindings = <
+                &kp F1       &kp F2       &kp F3       &kp F4       &kp INS                   &out OUT_BLE &out OUT_USB &to 0       &to 5       &soft_off
+                &kp F5       &kp F6       &kp F7       &kp F8       &kp PSCRN                 &trans       &trans       &trans      &trans      &trans
+                &kp F9       &kp F10      &kp F11      &kp F12      &kp SLCK                  &trans       &trans       &trans      &bootloader &sys_reset
+                                          &kp ESC      &kp SPACE    &kp TAB                   &kp ENTER    &kp BSPC     &trans
+            >;
+        };
+
+        default_m_layer5 {
+            bindings = <
+                &kp Q        &kp W        &kp E        &kp R        &kp T                     &kp Y        &kp U        &kp I       &kp O       &kp P
+                &mt LCTRL A  &mt LALT S   &mt LSHFT D  &mt LGUI F   &kp G                     &kp H        &mt LGUI J   &mt LSHFT K &mt LCTRL L &mt LGUI SEMI
+                &kp Z        &kp X        &kp C        &kp V        &kp B                     &kp N        &kp M        &kp COMMA   &kp DOT     &kp SLASH
+                                          &lt 1 ESC    &kp SPACE    &lt 2 TAB                 &lt 3 ENTER  &kp BSPC     &lt 4 DEL
+            >;
+        };
+
+    };
+};
