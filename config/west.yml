@@ -1,13 +1,13 @@
 manifest:
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
+    - name: petejohanson
+      url-base: https://github.com/petejohanson
     - name: englmaxi
       url-base: https://github.com/englmaxi
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      remote: petejohanson
+      revision: feat/pointers-move-scroll
       import: app/west.yml
     - name: zmk-dongle-display
       remote: englmaxi
